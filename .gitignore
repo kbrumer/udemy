@@ -1,0 +1,79 @@
+# IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse
+.settings
+
+# play-maven-plugin
+lib/
+
+# Emacs
+*~
+
+# Vim
+*.swp
+**/*.swp
+
+# Output Folders
+data/
+target/
+dependency-reduced-pom.xml
+
+# Log Files
+*.log
+
+# MacOSX
+.DS_Store
+/.project
+
+bower_components
+ui/app/bower_components
+ui/node_modules
+ui/.tmp
+ui/.sass-cache/
+ui/.idea
+ui/none
+ui/*.iml
+ui/srv
+ui/dist
+ui/target
+ui/docs
+ui/npm-debug.log
+ui/.swp
+ui/.swo
+
+rui/node_modules
+rui/.tmp
+rui/.sass-cache/
+rui/.idea
+rui/none
+rui/*.iml
+rui/srv
+rui/dist
+rui/target
+rui/docs
+rui/npm-debug.log
+rui/.swp
+rui/.swo
+
+# Stop commiting this pos
+ui/app/server.js
+rui/src/server.js
+
+ui/public
+ui/app/styles/*.css
+ui/coverage/
+ui/app/modules/tags
+
+# Ignore emacs files
+\#*#
+
+*.tern-port
+.tern-project
+
+# Floobits
+.floo
+.flooignore
