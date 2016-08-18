@@ -18,7 +18,7 @@ const localLogin = new LocalStrategy(localOptions, function(email, password, don
 
     // compare passwords
     user.comparePassword(password, function(err, isMatch){
-      if (err) { return dome(err); }
+      if (err) { return done(err); }
       if (!isMatch){ return done(null, false); }
 
       return done(null, user);

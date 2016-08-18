@@ -1,17 +1,15 @@
 import axios from 'axios';
 
-const ROOT_URL = 'http://localhost:3090';
+const ROOT_URL = 'http://brumer.homenet.org:9000';
 
-// {
-//     "email": "test@example.com",
-//     "password": "password"
-// }
 
 
 export function signinUser({ email, password }){
   return function(dispatch){
     // Submit email/password to server
-    axios.post(`${ROOT_URL}/signin`, { email, password });
+    const orgId = 'c9a3b3de-e88d-46b5-8fb2-4d69befa41ba';
+    const host = '50.246.238.78';
+    axios.post(`${ROOT_URL}/api/login`, { email, password, orgId, host });
 
 
     // If request is good
@@ -24,3 +22,8 @@ export function signinUser({ email, password }){
   };
 
 }
+
+// server:
+// npm install --save cors
+// const cors = require('cors');
+// app.use(cors());
