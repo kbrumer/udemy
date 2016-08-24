@@ -1,15 +1,20 @@
 import axios from 'axios';
 
-const ROOT_URL = 'http://brumer.homenet.org:9000';
+// external
+// const ROOT_URL = 'http://brumer.homenet.org:9000';
 
+// internal
+// const ROOT_URL = 'http://192.168.1.30:9000';
 
+// local
+const ROOT_URL = 'http://localhost:9000';
 
 export function signinUser({ email, password }){
   return function(dispatch){
     // Submit email/password to server
     const orgId = 'c9a3b3de-e88d-46b5-8fb2-4d69befa41ba';
     const host = '50.246.238.78';
-    axios.post(`${ROOT_URL}/api/login`, { email, password, orgId, host });
+    axios.post(`${ROOT_URL}/api/login`, { username: email, password, orgId, host });
 
 
     // If request is good
