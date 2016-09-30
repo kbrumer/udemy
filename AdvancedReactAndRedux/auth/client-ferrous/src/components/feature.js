@@ -10,6 +10,7 @@ class Feature extends Component {
   render() {
     return (
       <div>
+        My Feature Page !
         {this.props.message}
       </div>
     );
