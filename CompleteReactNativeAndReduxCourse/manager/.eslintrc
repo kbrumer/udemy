@@ -1,6 +1,12 @@
 {
   "extends": "rallycoding",
   "rules": {
-    "arrow-body-style": 0
+    "arrow-body-style": 0,
+    "no-multi-spaces": 0,
+    "react/jsx-no-bind": [2, {
+      "ignoreRefs": true,
+      "allowArrowFunctions": true,
+      "allowBind": false
+    }]
   }
 }
