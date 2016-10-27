@@ -7,9 +7,8 @@ import firebase from 'firebase';
 import reducers from './reducers';
 import Router from './Router';
 
-
 class App extends Component {
-  componentWillMount() {
+  componentDidMount() {
     const config = {
       apiKey: 'AIzaSyDaT3I71TWLONleu8EI_aFS8-viGnMMXBw',
       authDomain: 'manager-a64e6.firebaseapp.com',
