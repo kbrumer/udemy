@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Card, CardSection, Button } from './common';
@@ -12,14 +13,20 @@ class EmployeeEdit extends Component {
     this.onDeleteClick = this.onDeleteClick.bind(this);
   }
 
+  componentDidMount() {
+    _.each(this.props.employee, (value, prop) => {
+      this.props.employeeUpdate({ prop, value });
+    });
+  }
+
   onSaveClick() {
     const { name, phone, shift } = this.props;
-    this.props.employeeCreate({ name, phone, shift: shift || 'Monday' });
+    console.log(name, phone, shift);
   }
 
   onDeleteClick() {
     const { name, phone, shift } = this.props;
-    this.props.employeeCreate({ name, phone, shift: shift || 'Monday' });
+    console.log(name, phone, shift);
   }
 
   render() {
