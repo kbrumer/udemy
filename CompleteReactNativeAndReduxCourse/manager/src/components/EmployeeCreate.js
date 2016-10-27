@@ -8,10 +8,7 @@ import { employeeUpdate, employeeCreate } from '../actions/EmployeeActions';
 class EmployeeCreate extends Component {
   constructor(props) {
     super(props);
-
     this.onButtonPress = this.onButtonPress.bind(this);
-    // this.onEmailChange = this.onEmailChange.bind(this);
-    // this.onPasswordChange = this.onPasswordChange.bind(this);
   }
 
   onButtonPress() {
