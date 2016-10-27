@@ -8,4 +8,5 @@ export const LOGIN_USER = 'login.user';
 export const EMPLOYEE_UPDATE = 'employee.update';
 export const EMPLOYEE_CREATE = 'employee.create';
 export const EMPLOYEES_FETCH_SUCCESS = 'employee.fetch.success';
+export const EMPLOYEES_SAVE_SUCCESS = 'employee.save.success';
 
