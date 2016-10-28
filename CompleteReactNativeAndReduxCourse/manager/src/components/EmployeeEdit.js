@@ -1,6 +1,8 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Communications from 'react-native-communications';
+
 import { Card, CardSection, Button } from './common';
 
 import { employeeUpdate, employeeSave } from '../actions/EmployeeActions';
@@ -9,8 +11,9 @@ import EmployeeForm from './EmployeeForm';
 class EmployeeEdit extends Component {
   constructor(props) {
     super(props);
-    this.onSaveClick = this.onSaveClick.bind(this);
-    this.onDeleteClick = this.onDeleteClick.bind(this);
+    this.onSavePress = this.onSavePress.bind(this);
+    this.onDeletePress = this.onDeletePress.bind(this);
+    this.onTextPress = this.onDeletePress.bind(this);
   }
 
   componentDidMount() {
@@ -19,25 +22,37 @@ class EmployeeEdit extends Component {
     });
   }
 
-  onSaveClick() {
+  onSavePress() {
     const { name, phone, shift } = this.props;
     this.props.employeeSave({ name, phone, shift, uid: this.props.employee.uid });
   }
 
-  onDeleteClick() {
+  onDeletePress() {
     const { name, phone, shift } = this.props;
+  }
+
+  onTextPress() {
+    const { phone, shift } = this.props;
+    Communications.text(phone, `Your upcoming shift is on ${shift}`);
   }
 
   render() {
     return (
       <Card>
         <EmployeeForm />
+
         <CardSection>
-          <Button onPress={this.onSaveClick}>
+          <Button onPress={this.onSavePress}>
             Save
           </Button>
-          <Button onPress={this.onDeleteClick}>
+          <Button onPress={this.onDeletePress}>
             Delete
+          </Button>
+        </CardSection>
+
+        <CardSection>
+          <Button onPress={this.onTextPress}>
+            Text
           </Button>
         </CardSection>
       </Card>
